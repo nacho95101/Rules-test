@@ -1,0 +1,149 @@
+<!doctype html>
+
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1280px,height=720px" />
+  <meta name="viewport" content="user-scalable=no" />
+  <meta name="focus-ring-visibility" content="hidden" />
+  <title>Publicar</title>
+  <link rel="stylesheet" href="../../css/post.css" />
+  <script type="text/javascript" src="../../js/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="../../js/common.js"></script>
+  <script src="../../js/post.js"></script>
+</head>
+<body>
+<div class="bgPattern"></div>
+<div class="shadow"></div>
+<header>
+  <img src="../../img/btn_common_L.webp" class="buttonL" />
+    <div class="inkDropWrapper">
+      <div class="menuButton select"><span data-msgid="textbox_id-1">Instrucciones</span></div>
+      <div class="drop dropYellow"></div>
+      <div class="menuButtonShadow"></div>
+    </div>
+    <div class="inkDropWrapper">
+      <div class="menuButton"><span data-msgid="textbox_id-2">Normas</span></div>
+      <div class="drop dropGreen"></div>
+      <div class="menuButtonShadow"></div>
+    </div>
+    <div class="inkDropWrapper">
+      <div class="menuButton"><span data-msgid="textbox_id-3">Dudas</span></div>
+      <div class="drop dropPurple"></div>
+      <div class="menuButtonShadow"></div>
+    </div>
+  <img src="../../img/btn_common_R.webp" class="buttonR" />
+</header>
+<main>
+  <div id="howto" class="mainContent">
+    <div class="howtoWrapper">
+      <div class="iconPlateWrapper">
+        <div class="iconPlate splatoon2Font">
+          <img src="../../img/ico_post_01.webp" />
+          <div>
+            <span><span data-msgid="textbox_id-4">Escribe o dibuja algo con el marcador. Podrás elegir tres tipos de grosor.</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="iconPlateWrapper">
+        <div class="iconPlate splatoon2Font">
+          <img src="../../img/ico_post_02.webp" />
+          <div>
+            <span><span data-msgid="textbox_id-5">Utiliza la goma de borrar para eliminar elementos de tu creación. Podrás elegir entre tres tamaños distintos.</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="iconPlateWrapper">
+        <div class="iconPlate splatoon2Font">
+          <img src="../../img/ico_post_03.webp" />
+          <div>
+            <span><span data-msgid="textbox_id-6">Usa esta función para borrarlo todo.</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="iconPlateWrapper">
+        <div class="iconPlate splatoon2Font">
+          <img src="../../img/ico_post_04.webp" />
+          <div>
+            <span><span data-msgid="textbox_id-7">Deshaz la última acción que hayas realizado. Si vuelves a seleccionar esta opción, repetirás tu última acción.</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="iconPlateWrapper">
+        <div class="iconPlate splatoon2Font">
+          <img src="../../img/ico_post_05.webp" />
+          <div>
+            <span><span data-msgid="textbox_id-8">Amplía la zona en la que quieras centrarte. Vuelve a seleccionar esta opción para alejar la vista.</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="rule" class="mainContent" style="display: none;">
+    <div class="bgInkGreen">
+      <h2 class="splatoon2Font"><span data-msgid="textbox_id-9">Ten en cuenta las siguientes normas.<br />Las publicaciones que infrinjan estas normas podrían ocultarse a otros usuarios.</span></h2>
+    </div>
+    <div class="bgPlate">
+      <h2 class="colorGreen splatoon2Font"><span data-msgid="textbox_id-10">Información personal</span></h2>
+      <p class="dottedLine" />
+      <div class="description"><span data-msgid="textbox_id-11">No incluyas información que pueda utilizarse para identificarte a ti o a terceros, como nombres, direcciones de correo electrónico, direcciones postales o números de teléfono.</span></div>
+    </div>
+    <div class="bgPlate">
+      <h2 class="colorGreen splatoon2Font"><span data-msgid="textbox_id-12">Contenido que pueda resultar ofensivo</span></h2>
+      <p class="dottedLine" />
+      <div class="description"><span data-msgid="textbox_id-13">Puede que otros usuarios vean los dibujos que publiques.<br />No incluyas texto o imágenes que puedan resultar ofensivos.</span></div>
+    </div>
+    <div class="bgPlate">
+      <h2 class="colorGreen splatoon2Font"><span data-msgid="textbox_id-14">Contenido inapropiado</span></h2>
+      <p class="dottedLine" />
+      <div class="description"><span data-msgid="textbox_id-15">No publiques contenido comercial o publicitario, ni tampoco contenido violento o que atente contra la moral pública.</span></div>
+    </div>
+    <div class="bgPlate">
+      <h2 class="colorGreen splatoon2Font"><span data-msgid="textbox_id-16">Reportes falsos</span></h2>
+      <p class="dottedLine" />
+      <div class="description"><span data-msgid="textbox_id-17">No reportes intencionadamente contenido que no infrinja las normas.</span></div>
+    </div>
+    <div class="bgPlate">
+      <h2 class="colorGreen splatoon2Font"><span data-msgid="textbox_id-18">Infracción de derechos de autor</span></h2>
+      <p class="dottedLine" />
+      <div class="description"><span data-msgid="textbox_id-19">No publiques contenido que infrinja los derechos de propiedad intelectual de terceros.</span></div>
+    </div>
+  </div>
+  <div id="qa" class="mainContent" style="display: none;">
+    <div class="bgPlate">
+      <h2 class="colorPurple splatoon2Font"><span data-msgid="textbox_id-20">¿Cómo publico mi imagen en internet?</span></h2>
+      <p class="dottedLine" />
+      <div class="description"><span data-msgid="textbox_id-21">Para compartir tu creación en redes sociales, elige "Publicar" en la pantalla de dibujo. Asegúrate de que tu consola está conectada a internet.</span></div>
+      <div class="note">
+        <div class="mark"><span data-msgid="textbox_id-30">◆</span></div>
+        <div class="notification"><span data-msgid="textbox_id-31">Es necesario disponer de una cuenta en redes sociales.</span></div>
+      </div>
+    </div>
+    <div class="bgPlate">
+      <h2 class="colorPurple splatoon2Font"><span data-msgid="textbox_id-22">¿Cómo publico un mensaje festivo?</span></h2>
+      <p class="dottedLine" />
+      <div class="description"><span data-msgid="textbox_id-23">En cuanto se anuncie el tema del festival, acude a la casilla del festival en el centro de Cromópolis y elige un equipo para poder publicar algo.<br />No podrás publicar mensajes festivos si no has elegido un equipo.</span></div>
+    </div>
+    <div class="bgPlate">
+      <h2 class="colorPurple splatoon2Font"><span data-msgid="textbox_id-24">Vi un dibujo que infringe las normas. ¿Qué hago?</span></h2>
+      <p class="dottedLine" />
+      <div class="description"><span data-msgid="textbox_id-25">Reporta todo el contenido inapropiado que veas.</span></div>
+    </div>
+    <div class="bgPlate">
+      <h2 class="colorPurple splatoon2Font"><span data-msgid="textbox_id-26">¿Cómo reporto algo?</span></h2>
+      <p class="dottedLine" />
+      <div class="description"><span data-msgid="textbox_id-27">Cuando estés en el centro, selecciona alguno de los letreros o grafitis que veas en las paredes o en otros jugadores y luego oprime  para reportarlos. Elige el motivo por el que quieres informar sobre el dibujo y luego envía el reporte.</span></div>
+    </div>
+    <div class="bgPlate">
+      <h2 class="colorPurple splatoon2Font"><span data-msgid="textbox_id-28">¿Puedo hacer que no aparezcan imágenes en la plaza?</span></h2>
+      <p class="dottedLine" />
+      <div class="description"><span data-msgid="textbox_id-29">No existe ningún modo de impedir que los dibujos aparezcan en la plaza, aunque puedes elegir que se muestren solo los diseños que ha creado Nintendo.<br />Abre el menú, accede a la sección de ajustes y selecciona "Ocultar" en la opción de los mensajes.</span></div>
+    </div>
+  </div>
+  <div id="backButton">
+    <img src="../../img/btn_common_back.webp" />
+  </div>
+  <div class="disableTouch"></div>
+</main>
+<!-- textbox_id_counter-31 common_idbase-10000 --></body>
+</html>

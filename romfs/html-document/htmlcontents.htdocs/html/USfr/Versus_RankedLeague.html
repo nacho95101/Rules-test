@@ -1,0 +1,572 @@
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=1280,height=720" />
+<meta name="viewport" content="user-scalable=no" />
+<meta name="focus-ring-visibility" content="hidden" />
+<title>Matchs en ligne</title>
+<link rel="stylesheet" href="../../css/vs.css" id="changestyle" />
+<script type="text/javascript" src="../../js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script src="../../js/vs.js"></script>
+</head>
+<body>
+  <div class="disableTouch">
+    <div class="shadow"></div>
+    <div id="backButton" class="blurFilter">
+      <img src="../../img/btn_common_back.webp" />
+    </div>
+    <div id="twoButtonMenu" class="menu isHidden blurFilter">
+      <img src="../../img/btn_common_L.webp" class="buttonL" />
+      <div class="inkDropWrapper">
+        <p id="matchButton" class="twoColumnButton headerButton onTab">
+          <span data-msgid="textbox_id-1">Mode</span>
+        </p>
+        <div class="drop"></div>
+        <div class="twoColumnButtonShadow"></div>
+      </div>
+      <div class="inkDropWrapper ruleButton isHidden" name='area'>
+        <p class="twoColumnButton headerButton offTab">
+          <span data-msgcom="true" data-msgid="textbox_id-30002">Défense de zone</span>
+        </p>
+        <div class="drop"></div>
+        <div class="twoColumnButtonShadow"></div>
+      </div>
+      <div class="inkDropWrapper ruleButton isHidden" name='yagura'>
+        <p class="twoColumnButton headerButton offTab">
+          <span data-msgcom="true" data-msgid="textbox_id-30003">Plate-forme mobile</span>
+        </p>
+        <div class="drop"></div>
+        <div class="twoColumnButtonShadow"></div>
+      </div>
+      <div class="inkDropWrapper ruleButton isHidden" name='hoko'>
+        <p class="twoColumnButton headerButton offTab">
+          <span data-msgid="textbox_id-4">Mission bazookarpe</span>
+        </p>
+        <div class="drop"></div>
+        <div class="twoColumnButtonShadow"></div>
+      </div>
+      <div class="inkDropWrapper ruleButton isHidden" name='asari'>
+        <p class="twoColumnButton headerButton offTab">
+          <span data-msgcom="true" data-msgid="textbox_id-60073">Pluie de palourdes</span>
+        </p>
+        <div class="drop"></div>
+        <div class="twoColumnButtonShadow"></div>
+      </div>
+      <img src="../../img/btn_common_R.webp" class="buttonR" />
+    </div>
+    <div id="gati" class="mainContent isHidden">
+      <div class="bgPlate plateZigzag blurFilter">
+        <img src="../../img/bg_common_plate_hook_black.webp" class="hookImg" />
+        <h1 id="headerGati" class="logoHeader">
+          <img class="ruleLogo" />
+          <p class="logoHeaderText">
+            <span data-msgid="textbox_id-5">Matchs pro</span>
+          </p>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <div class="inkDropWrapper">
+            <div class="screenshotWrapperGreen leftSideImg">
+              <img src="../../img/EU/pic_vs_ranked_udemae.webp" class="screenshot" />
+            </div>
+            <div class="frameDrop"></div>
+          </div>
+          <div class="rightContent">
+            <span data-msgid="textbox_id-6">Les matchs pro sont destinés aux inklings qui ne se satisfont pas des simples guerres de territoire proposées par les matchs classiques.<br />En match pro, seule la victoire compte.<br />Laisse tes adversaires de côté pour atteindre le plus haut rang!</span>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag blurFilter">
+        <h1 class="ikaHeader">
+          <p class="ikaHeaderText">
+            <span class="ikaHeaderName" data-msgid="textbox_id-7">Rang</span>
+          </p>
+        </h1>
+        <div class="bgPlateContent">
+          <div class="twoImageWrapper">
+            <div class="screenshotWrapperPink">
+              <img src="../../img/EU/pic_vs_ranked_udemaemeter_1.webp" class="screenshot" />
+            </div>
+            <div class="screenshotWrapperGreen">
+              <img src="../../img/EU/pic_vs_ranked_udemaemeter_2.webp" class="screenshot" />
+            </div>
+          </div>
+          <div>
+            <span data-msgid="textbox_id-8">En match pro, tu obtiens un rang distinct pour chaque mode de jeu. Lorsque tu gagnes un match dans un mode donné, ta jauge de rang pour ce mode se remplit. Une fois pleine, tu passes au rang suivant.<br />Chaque défaite fissure ta jauge de rang. Si tu en subis trop, elle finit par se briser. Si cela arrive alors que plus de la moitié de la jauge est remplie, tu conserves ton rang actuel. Dans le cas contraire, tu descends au rang inférieur.</span>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader">
+          <span data-msgid="textbox_id-9">Cote</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <div class="screenshotWrapperPink rightSideImg">
+            <img src="../../img/EU/pic_vs_ranked_gachi_power.webp" class="screenshot" />
+          </div>
+          <div class="leftContent">
+            <span data-msgid="textbox_id-10">Une fois que tu as accumulé une certaine quantité d'expérience, la cote des huit joueurs de la session s'affiche à l'écran au début des matchs. Cette valeur rend compte des capacités des joueurs plus précisément que ne le fait leur rang.<br />À rangs identiques, un match réunissant des joueurs dont la cote est élevée sera théoriquement plus intense qu'un match disputé par des joueurs dont la cote est basse. Vaincre une équipe dont la cote est élevée remplit grandement ta jauge de rang.</span>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader splatoon2Font">
+          <span data-msgid="textbox_id-11">Sauter des rangs</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <span data-msgid="textbox_id-12">Si tes prouesses lors d'un match s'avèrent particulièrement impressionnantes et si tu remplis ta jauge de rang, il se peut que tu progresses de plusieurs rangs d'un seul coup!</span>
+        </div>
+      </div>
+    </div>
+    <div id="league" class="mainContent isHidden">
+      <div class="bgPlate plateZigzag blurFilter">
+        <img src="../../img/bg_common_plate_hook_black.webp" class="hookImg" />
+        <h1 id="headerGati" class="logoHeader">
+          <img class="ruleLogo" />
+          <p class="logoHeaderText">
+            <span data-msgid="textbox_id-13">Matchs de ligue</span>
+          </p>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <div class="inkDropWrapper">
+            <div class="screenshotWrapperGreen leftSideImg">
+              <img src="../../img/EU/pic_vs_league_overall.webp" class="screenshot" />
+            </div>
+            <div class="frameDrop"></div>
+          </div>
+          <div class="rightContent">
+            <span data-msgid="textbox_id-14">Dans ce mode, tu dois former une équipe et tenter d'obtenir plus de victoires que les autres dans le temps alloué pour la session.<br />La carte change toutes les deux heures, indiquant le début d'un nouveau match de ligue. Les victoires et défaites accumulées lors d'une session déterminent la cote de la ligue de ton équipe. C'est cette cote qui est prise en compte pour établir le classement en fin de session.<br />Les équipes adverses sont choisies pour leur cote proche de celle de la tienne. À toi et tes coéquipiers d'établir la meilleure stratégie pour les battre!<br />Bien que les règles soient celles des matchs pro, ton rang n'évolue pas lors des matchs de ligue, alors profites-en pour mettre ton talent à l'épreuve.</span>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag blurFilter">
+        <h1 class="ikaHeader">
+          <p class="ikaHeaderText">
+            <span class="ikaHeaderName" data-msgid="textbox_id-15">Cote de la ligue</span>
+          </p>
+        </h1>
+        <div class="bgPlateContent">
+          <div class="screenshotWrapperPink rightSideImg indentSmall">
+            <img src="../../img/EU/pic_vs_league_lp.webp" class="screenshot" />
+          </div>
+          <div class="leftContent indentLarge">
+            <span data-msgid="textbox_id-16">La cote de la ligue mesure les performances de ton équipe. Au début, elle n'est pas définie et n'apparaît qu'après sept matchs.<br />À partir du huitième match, elle est ajustée en fonction des résultats de ton équipe. Le moyen le plus rapide de la faire augmenter est de remporter des victoires face à des équipes dont la cote de la ligue est élevée.<br />Le classement de ton équipe est déterminé par la valeur maximale atteinte par sa cote de la ligue, alors fais de ton mieux match après match pour la hisser le plus haut possible!<br />Les équipes dont la cote de la ligue n'est pas encore définie sont opposées en priorité à des équipes dont les résultats en matchs de ligue et en matchs pro sont proches des leurs.</span>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader splatoon2Font">
+          <span data-msgid="textbox_id-17">Duos et équipes</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <div class="screenshotWrapperGreen leftSideImg">
+            <img src="../../img/EU/pic_vs_league_team_pair.webp" class="screenshot" />
+          </div>
+          <div class="rightContent">
+            <span data-msgid="textbox_id-18">Il est possible de prendre part aux matchs de ligue en duo ou en équipe de quatre.<br />Les duos affrontent d'autres duos, et les équipes d'autres équipes. Des classements séparés sont établis pour les équipes et les duos.</span>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader splatoon2Font">
+          <span data-msgid="textbox_id-19">Résultats et classement</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <div class="screenshotWrapperPink rightSideImg">
+            <img src="../../img/EU/pic_vs_league_result.webp" class="screenshot" />
+          </div>
+          <div class="leftContent">
+            <span data-msgid="textbox_id-20">Un match de ligue dure deux heures. La carte change pour chaque nouvelle session. La position de ton équipe dans le classement t'est révélée peu après qu'une session a pris fin. Cela te permet de voir où ton équipe se situe par rapport aux autres qui ont disputé au moins sept matchs.<br />Les membres des équipes les mieux placées reçoivent des médailles!</span>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader splatoon2Font">
+          <span data-msgid="textbox_id-21">Changement de membres</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <span data-msgid="textbox_id-22">La cote de la ligue est calculée par équipe ou par duo. Lorsque les membres d'une équipe ou d'un duo changent, une nouvelle cote est calculée. Mais pas d'inquiétude, la cote de la ligue précédente est sauvegardée et est réutilisée si l'ancienne équipe ou l'ancien duo se reforme.</span>
+        </div>
+      </div>
+    </div>
+    <div id="area" class="mainContent isHidden">
+      <div class="bgHookInkPurple bgHookInk">
+        <p class="bgHookContent splatoon2Font">
+          <span data-msgid="textbox_id-23">L'équipe qui encre les zones clés et les protège suffisamment longtemps l'emporte!</span>
+        </p>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <img src="../../img/bg_common_plate_hook_black.webp" class="hookImg" />
+        <h1 id="headerGati" class="logoHeader"> <img class="ruleLogo" />
+          <p class="logoHeaderText">
+            <span data-msgcom="true" data-msgid="textbox_id-30002">Défense de zone</span>
+          </p>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent isNarrow">
+          <div class="inkDropWrapper">
+            <div class="screenshotWrapperGreen descriptionImg indentLarge">
+              <img src="../../img/EU/pic_vs_rule_area_screen.webp" class="screenshot" />
+            </div>
+            <div class="frameDrop"></div>
+          </div>
+          <div class="imgDescriptionWrapper">
+            <div class="imgDescription">
+              <div class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30069"><span data-msgid="textbox_id-81">1</span></div>
+              <div class="imgDescriptionText splatoon2Font" data-msgcom="true" data-msgid="textbox_id-30002"><span data-msgid="textbox_id-82">Zone clé</span></div>
+            </div>
+            <div class="imgDescription">
+              <div class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30070"><span data-msgid="textbox_id-83">2</span></div>
+              <div class="imgDescriptionText splatoon2Font"><span data-msgid="textbox_id-84">Indicateur de contrôle</span></div>
+            </div>
+            <div class="imgDescription">
+              <div class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30071"><span data-msgid="textbox_id-85">3</span></div>
+              <div class="imgDescriptionText splatoon2Font"><span data-msgid="textbox_id-86">Décompte</span></div>
+            </div>
+            <div class="imgDescription">
+              <div class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30072"><span data-msgid="textbox_id-87">4</span></div>
+              <div class="imgDescriptionText splatoon2Font"><span data-msgid="textbox_id-88">Pénalités</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader splatoon2Font">
+          <span data-msgcom="true" data-msgid="textbox_id-30033">Règles</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <div class="screenshotWrapperPink rightSideImg">
+            <img src="../../img/EU/pic_vs_rule_area_overall.webp" class="screenshot" />
+          </div>
+          <div class="leftContent indentXLargeTop">
+            <span data-msgid="textbox_id-34">L'équipe qui défend les zones clés pendant la durée requise l'emporte!<br />Pour commencer, ton équipe doit s'approprier les zones clés de la carte en les encrant.<br />Regarde l'indicateur de contrôle pour voir la progression de l'encrage d'une zone.<br />Une fois que ton équipe s'est emparée de toutes les zones clés, un décompte démarre. S'il atteint zéro, c'est la victoire par K.-O.!</span>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader">
+          <span data-msgcom="true" data-msgid="textbox_id-30035">Conseils</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <span data-msgid="textbox_id-36">Tenter de reprendre en solo une zone clé défendue par l'adversaire n'est pas chose facile. Mieux vaut y aller avec tes coéquipiers!<br />À l'inverse, quand ton équipe défend, il convient de tout faire pour perturber l'équipe d'en face et l'empêcher d'agir de manière organisée!</span>
+        </div>
+      </div>
+    </div>
+    <div id="yagura" class="mainContent isHidden">
+      <div class="bgHookInkGreen bgHookInk">
+        <p class="bgHookContent splatoon2Font">
+          <span data-msgid="textbox_id-37">L'équipe qui conduit la plate-forme mobile jusqu'à<br />l'arrivée dans le camp adverse l'emporte!</span>
+        </p>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <img src="../../img/bg_common_plate_hook_black.webp" class="hookImg" />
+        <h1 id="headerGati" class="logoHeader">
+          <img class="ruleLogo" />
+          <p class="logoHeaderText">
+            <span data-msgcom="true" data-msgid="textbox_id-30003">Plate-forme mobile</span>
+          </p>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent isNarrow">
+          <div class="inkDropWrapper">
+            <div class="screenshotWrapperGreen descriptionImg indentMedium">
+              <img src="../../img/EU/pic_vs_rule_lift_screen.webp" class="screenshot" />
+            </div>
+            <div class="frameDrop"></div>
+          </div>
+          <div class="imgDescriptionWrapper">
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30069">1</span>
+              <span class="imgDescriptionText splatoon2Font" data-msgcom="true" data-msgid="textbox_id-30003">Plate-forme mobile</span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30070">2</span>
+              <span class="imgDescriptionText splatoon2Font" data-msgcom="true" data-msgid="textbox_id-30042">Piédestal</span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30071">3</span>
+              <span class="imgDescriptionText splatoon2Font" data-msgid="textbox_id-44">Points de contrôle</span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30072">4</span>
+              <span class="imgDescriptionText splatoon2Font" data-msgcom="true" data-msgid="textbox_id-30046">Décompte</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader splatoon2Font">
+          <span data-msgcom="true" data-msgid="textbox_id-30033">Règles</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <div class="ruleContent">
+            <div class="screenshotWrapperPink rightSideImg">
+              <img src="../../img/EU/pic_vs_rule_lift_wall.webp" class="screenshot" />
+            </div>
+            <div class="leftContent">
+              <span data-msgid="textbox_id-48">L'équipe qui mène la plate-forme mobile située au centre de la carte jusqu'à l'arrivée dans l'équipe adverse l'emporte!<br />Pour commencer, encre les côtés de la plate-forme et grimpe dessus pour t'en emparer. La plate-forme se dirige alors automatiquement vers l'équipe adverse.<br />Si tu te fais liquider et que l'adversaire prend le contrôle de la plate-forme mobile, ou si personne ne grimpe sur cette dernière pendant un certain temps, elle repart au centre de la carte.</span>
+            </div>
+          </div>
+          <div class="ruleContent indentMedium">
+            <div class="screenshotWrapperGreen leftSideImg">
+              <img src="../../img/EU/pic_vs_rule_lift_checkpoint.webp" class="screenshot" />
+            </div>
+            <div class="rightContent">
+              <span data-msgid="textbox_id-49">Des points de contrôle sont disposés sur le chemin menant à l'arrivée. La plate-forme mobile s'arrête quand elle en atteint un. Garde le contrôle de la plate-forme jusqu'à ce que la résistance du point de contrôle soit épuisée pour qu'elle redémarre.<br />Une fois un point de contrôle franchi, tu peux y passer à nouveau sans que la plate-forme ne s'arrête. En revanche, la résistance d'un point de contrôle que ton équipe n'est pas parvenue à franchir remonte petit à petit.</span>
+            </div>
+          </div>
+          <div class="ruleContent indentMedium">
+            <div class="screenshotWrapperPink rightSideImg">
+              <img src="../../img/EU/pic_vs_rule_lift_count.webp" class="screenshot" />
+            </div>
+            <div class="leftContent">
+              <span data-msgid="textbox_id-50">Le décompte jusqu'à l'arrivée progresse au fur et à mesure que la plate-forme mobile s'en rapproche. Si le match se termine sans qu'aucune équipe ne soit parvenue à l'arrivée, celle dont le décompte a le plus progressé l'emporte!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader">
+          <span data-msgcom="true" data-msgid="textbox_id-30035">Conseils</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <span data-msgid="textbox_id-52">Le joueur qui reste sur la plate-forme mobile faisant une cible facile, il revient à ses coéquipiers de le précéder pour s'assurer que la voie est libre.<br />Si l'adversaire a le contrôle de la plate-forme, profite de ses arrêts aux points de contrôle pour tenter de la récupérer avec tes alliés!</span>
+        </div>
+      </div>
+    </div>
+    <div id="hoko" class="mainContent isHidden">
+      <div class="bgHookInkPink bgHookInk">
+        <p class="bgHookContent splatoon2Font">
+          <span data-msgid="textbox_id-53">L'équipe qui amène le bazookarpe sur<br />le piédestal de l'équipe adverse l'emporte!</span>
+        </p>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <img src="../../img/bg_common_plate_hook_black.webp" class="hookImg" />
+        <h1 id="headerGati" class="logoHeader">
+          <img class="ruleLogo" />
+          <p class="logoHeaderText">
+            <span data-msgcom="true" data-msgid="textbox_id-30054">Bazookarpe</span>
+          </p>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent isNarrow">
+          <div class="inkDropWrapper">
+            <div class="screenshotWrapperGreen descriptionImg indentMedium">
+              <img src="../../img/EU/pic_vs_rule_goal_screen.webp" class="screenshot" />
+            </div>
+            <div class="frameDrop"></div>
+          </div>
+          <div class="imgDescriptionWrapper">
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30069">1</span>
+              <span class="imgDescriptionText splatoon2Font" data-msgcom="true" data-msgid="textbox_id-30054">Bazookarpe</span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30070">2</span>
+              <span class="imgDescriptionText splatoon2Font" data-msgcom="true" data-msgid="textbox_id-30042">Piédestal</span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30071">3</span>
+              <span class="imgDescriptionText splatoon2Font" span="" data-msgid="textbox_id-60">Durée de conservation du bazookarpe</span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30072">4</span>
+              <span class="imgDescriptionText splatoon2Font" data-msgcom="true" data-msgid="textbox_id-30046">Décompte</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader splatoon2Font">
+          <span data-msgcom="true" data-msgid="textbox_id-30033">Règles</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <div class="ruleContent">
+            <div class="screenshotWrapperPink rightSideImg">
+              <img src="../../img/EU/pic_vs_rule_goal_barrier.webp" class="screenshot" />
+            </div>
+            <div class="leftContent">
+              <span data-msgid="textbox_id-64">L'équipe qui amène le bazookarpe sur le piédestal de l'équipe adverse l'emporte!<br />Pour commencer, dirige-toi vers le bazookarpe, au centre de la carte.<br />Il est protégé par un bouclier que tu dois briser pour t'en emparer. Attention! Une fois son bouclier brisé, le bazookarpe retourne à sa position initiale s'il est abandonné trop longtemps!</span>
+            </div>
+          </div>
+          <div class="ruleContent indentMedium">
+            <div class="screenshotWrapperGreen leftSideImg">
+              <img src="../../img/EU/pic_vs_rule_goal_shot.webp" class="screenshot" />
+            </div>
+            <div class="rightContent">
+              <span data-msgid="textbox_id-65">Une fois le bazookarpe en ta possession, dirige-toi vers le piédestal!<br />Le décompte progresse au fur et à mesure que tu t'en rapproches.<br />Prends garde, le bazookarpe pèse son poids, et tu ne peux ni effectuer de super saut, ni utiliser ton arsenal lorsque tu le portes. Cependant, tu peux tout de même compter sur ses tirs dévastateurs!<br />Tu peux porter le bazookarpe pendant un certain temps, après quoi il explose, te liquidant au passage. Si cela arrive ou si tu te fais simplement liquider, tu lâches le bazookarpe et son bouclier se reforme.</span>
+            </div>
+          </div>
+          <div class="ruleContent indentMedium">
+            <div class="screenshotWrapperPink rightSideImg">
+              <img src="../../img/EU/pic_vs_rule_goal_count.webp" class="screenshot" />
+            </div>
+            <div class="leftContent">
+              <span data-msgid="textbox_id-66">Si le match se termine sans qu'aucune équipe n'ait amené le bazookarpe sur un piédestal, celle dont le décompte a le plus progressé l'emporte!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader">
+          <span data-msgcom="true" data-msgid="textbox_id-30035">Conseils</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <div class="leftContent">
+            <span data-msgid="textbox_id-68">Le plus important dans ce mode, c'est de toujours veiller à avancer avec le bazookarpe.<br />Chaque occasion de le rapprocher du but doit être saisie. Si un de tes coéquipiers a le bazookarpe, précède-le et ouvre-lui la voie!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="asari" class="mainContent isHidden">
+      <div class="bgHookInkBlue bgHookInk">
+        <p class="bgHookContent splatoon2Font">
+          <span><span data-msgid="textbox_id-30074">Lance une Super palourde sur le panier de tes adversaires pour briser la barrière.<br />L'équipe qui lance le plus de palourdes dans le panier adverse remporte la partie!</span></span>
+        </p>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <img src="../../img/bg_common_plate_hook_black.webp" class="hookImg" />
+        <h1 id="headerGati" class="logoHeader">
+          <img class="ruleLogo" />
+          <p class="logoHeaderText">
+            <span data-msgcom="true" data-msgid="textbox_id-60073">Pluie de palourdes</span>
+          </p>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent isNarrow">
+          <div class="inkDropWrapper">
+            <div class="screenshotWrapperGreen descriptionImg indentMedium">
+              <img src="../../img/EU/pic_vs_rule_00_screen.webp" class="screenshot" />
+            </div>
+            <div class="frameDrop"></div>
+          </div>
+          <div class="imgDescriptionWrapper">
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30069">1</span>
+              <span class="imgDescriptionText splatoon2Font"><span data-msgid="textbox_id-30076">Palourde</span></span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30070">2</span>
+              <span class="imgDescriptionText splatoon2Font"><span data-msgid="textbox_id-30096">Super palourde</span></span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30071">3</span>
+              <span class="imgDescriptionText splatoon2Font"><span data-msgid="textbox_id-30078">Panier</span></span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30072">4</span>
+              <span class="imgDescriptionText splatoon2Font"><span data-msgid="textbox_id-30079">Compteur</span></span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex"><span data-msgid="textbox_id-30080">5</span></span>
+              <span class="imgDescriptionText splatoon2Font"><span data-msgid="textbox_id-30081">Jauge de la barrière</span></span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex"><span data-msgid="textbox_id-30082">6</span></span>
+              <span class="imgDescriptionText splatoon2Font"><span data-msgid="textbox_id-30083">Total de palourdes de l'équipe</span></span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex"><span data-msgid="textbox_id-30084">7</span></span>
+              <span class="imgDescriptionText splatoon2Font"><span data-msgid="textbox_id-30085">Palourdes que tu tiens</span></span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex"><span data-msgid="textbox_id-30094">8</span></span>
+              <span class="imgDescriptionText splatoon2Font"><span data-msgid="textbox_id-30095">Coéquipier ayant le plus de palourdes</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader splatoon2Font">
+          <span data-msgcom="true" data-msgid="textbox_id-30033">Règles</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <div class="ruleContent">
+            <div class="screenshotWrapperPink rightSideImg">
+              <img src="../../img/EU/pic_vs_rule_01_asari.webp" class="screenshot" />
+            </div>
+            <div class="leftContent">
+              <span><span data-msgid="textbox_id-30086">Lance une Super palourde sur le panier de tes adversaires pour briser la barrière. L'équipe qui lance le plus de palourdes dans le panier adverse remporte la partie!<br />Commence par ramasser les palourdes éparpillées dans la carte.<br />Tu n'as qu'à toucher une palourde et elle te suivra!</span></span>
+            </div>
+          </div>
+          <div class="ruleContent indentMedium">
+            <div class="screenshotWrapperGreen leftSideImg">
+              <img src="../../img/EU/pic_vs_rule_02_gachiasari.webp" class="screenshot" />
+            </div>
+            <div class="rightContent">
+              <span><span data-msgid="textbox_id-30087">Ramasse 10 palourdes et elles se transformeront en une Super palourde!<br />Créer une Super palourde devrait être ton premier objectif.</span></span>
+            </div>
+          </div>
+          <div class="ruleContent indentMedium">
+            <div class="screenshotWrapperPink rightSideImg">
+              <img src="../../img/EU/pic_vs_rule_03_break_barrier.webp" class="screenshot" />
+            </div>
+            <div class="leftContent">
+              <span><span data-msgid="textbox_id-30088">Une fois que tu as une Super palourde, dirige-toi vers le panier de tes adversaires et lance-la sur la barrière protectrice.<br />Appuie sur  et relâche-le pour lancer la Super palourde (ou les palourdes que tu as en ta possession) droit sur le panier.<br />Une fois que la barrière est brisée, le décompte d'exposition du panier s'enclenche.</span></span>
+            </div>
+          </div>
+          <div class="ruleContent indentMedium">
+            <div class="screenshotWrapperGreen leftSideImg">
+              <img src="../../img/EU/pic_vs_rule_04_chance_time.webp" class="screenshot" />
+            </div>
+            <div class="rightContent">
+              <span><span data-msgid="textbox_id-30089">Le décompte d'exposition, affiché au milieu de l'écran, indique le temps restant avant que la protection du panier ne revienne en place. Profite de chaque seconde pour bombarder le panier adverse de palourdes et de Super palourdes en appuyant sur !<br />Chaque palourde qui entre dans le panier adverse fait progresser le compteur de ton équipe. S'il arrive à zéro, c'est la victoire automatique!<br />Les palourdes normales valent 3 points, et les Super palourdes 20 points.<br />Quand tu lances des palourdes dans le panier adverse, tu fais remonter son décompte d'exposition.</span></span>
+            </div>
+          </div>
+          <div class="ruleContent indentMedium">
+            <div class="screenshotWrapperPink rightSideImg">
+              <img src="../../img/EU/pic_vs_rule_05_revival.webp" class="screenshot" />
+            </div>
+            <div class="leftContent">
+              <span><span data-msgid="textbox_id-30090">Tant que le panier de ton équipe est exposé, tu ne peux pas accéder au panier adverse.<br />Essaye d'éclabousser les adversaires chargés de palourdes pour les empêcher de faire remonter le décompte d'exposition!<br />Lorsque la protection de ton panier revient en place, l'équipe adverse reçoit une pénalité et une Super palourde apparaît sous ton panier pour favoriser la contre-attaque!</span></span>
+            </div>
+          </div>
+          <div class="ruleContent indentMedium">
+            <div class="screenshotWrapperGreen leftSideImg">
+              <img src="../../img/EU/pic_vs_rule_06_battle.webp" class="screenshot" />
+            </div>
+            <div class="rightContent">
+              <span><span data-msgid="textbox_id-30091">Si tu te fais éclabousser en transportant des palourdes, elles tomberont au sol à cet endroit.<br />Si elles sont laissées au sol pendant trop longtemps, elles disparaissent!<br />Veille à ramasser celles de tes coéquipiers avant qu'il ne soit trop tard!</span></span>
+            </div>
+          </div>
+          <div class="ruleContent indentMedium">
+            <div class="screenshotWrapperPink rightSideImg">
+              <img src="../../img/EU/pic_vs_rule_07_map.webp" class="screenshot" />
+            </div>
+            <div class="leftContent">
+              <span><span data-msgid="textbox_id-30092">Si tu as de la difficulté à trouver assez de palourdes pour créer une Super palourde, élargis ton territoire en encrant du terrain.<br />Si des palourdes existent dans une zone couverte par l'encre de ton équipe, elles apparaîtront sur la carte.<br />Sache aussi que de nouvelles palourdes apparaissent sur la carte à intervalles réguliers!</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader">
+          <span data-msgcom="true" data-msgid="textbox_id-30035">Conseils</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <div class="leftContent">
+            <span><span data-msgid="textbox_id-30093">Il est essentiel de bien connaître les meilleurs endroits pour effectuer tes lancers vers le panier adverse.<br />Pour gagner en efficacité, essaie de lancer un maximum de palourdes au cours d'une même attaque! À toi de ne pas laisser passer l'occasion quand la protection du panier adverse disparaît.<br />Tant que les paniers des deux équipes sont protégés, l'équipe qui obtient une Super palourde verra les jauges spéciales de tous ses membres se remplir progressivement. Alors tu sais ce qu'il te reste à faire : obtiens une Super palourde dès que possible pour donner les meilleures chances à l'offensive de ton équipe! Si jamais les deux équipes possèdent au moins une Super palourde, ou bien si aucune équipe n'en détient, ce sont les jauges spéciales de l'équipe qui mène qui se rempliront!</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- textbox_id_counter-30096 common_idbase-30000 --></body>
+</html>

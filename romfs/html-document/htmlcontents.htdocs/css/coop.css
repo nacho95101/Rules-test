@@ -1,0 +1,145 @@
+@charset "utf-8";
+/* reset----------------------------------------------------------------------*/
+body, div, th, td, p, ul, ol, dl, dt, dd, img, h1, h2, h3, h4, h5, h6,
+footer, header, nav, section, span, figure {
+	margin: 0;
+	padding: 0;
+	word-break: normal;
+}
+a {
+	text-decoration: none;
+}
+/*------------------------------------------
+    font
+--------------------------------------------*/
+@font-face {
+  font-family: "Splatoon1";
+  src: url("../font/Splatoon1.otf");
+}
+@font-face {
+  font-family: "Splatoon2";
+  src: url("../font/Splatoon2.otf");
+}
+@font-face {
+  font-family: "newrodinpro";
+  src: url("../font/nintendoP_NewRodin-B.ttf");
+}
+@font-face {
+  font-family: "rowdy";
+  src: url("../font/FOT-RowdyStd-EB.otf");
+  unicode-range: U+4E00-9FFF;
+}
+@font-face {
+  font-family: "kurokane";
+  src: url("../font/FOT-KurokaneStd-EB.otf");
+}
+
+html {
+	margin: 0;
+}
+body {
+	margin: 0;
+	width: 1280px;
+	height: 720px;
+	background-color: black;
+}
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-image: url("../img/bg_common_pattern_gray.webp");
+  background-repeat: repeat;
+}
+
+#manual {
+  margin-top: 92px;
+  color: #543333;
+  background: url("../img/img_coop_entrance_manual.webp") no-repeat;
+  width: 428px;
+  height: 492px;
+}
+#salmon {
+  margin-left: 85px;
+  margin-top: 128px;
+  color: #28422d;
+  background: url("../img/img_coop_entrance_salmon.webp") no-repeat;
+  width: 434px;
+  height: 500px;
+}
+#manual:focus {
+  color: #bf580a;
+}
+#salmon:focus {
+  color: #008f37;
+}
+.focus {
+	animation: loopScale 1s infinite;
+}
+@keyframes loopScale {
+	0% {
+		transform: scale(1.15) translate3d(0,0,0);
+	}
+	50% {
+		transform: scale(1.19) translate3d(0,0,0);
+	}
+	100% {
+		transform: scale(1.15) translate3d(0,0,0);
+	}
+}
+.paper {
+  position: relative;
+}
+.paper img {
+  display: block;
+}
+.paperTitle {
+  font-family: "rowdy", "Splatoon1";
+  font-size: 52px;
+  line-height: 55px;
+  text-align: center;
+  width: 350px;
+  height: 120px;
+}
+.paperTitle_EUru {
+  line-height: 120px;/*1行しかないとき用*/
+}
+#manual .paperTitle {
+  transform: rotate(-3deg);
+  margin: 45px 32px 0;
+}
+#salmon .paperTitle {
+  transform: rotate(4deg);
+  margin: 45px 56px 0;
+}
+#backButton {
+	position: fixed;
+	top: 621px;
+  z-index; 100;
+}
+
+.fadeOut {
+	animation: fadeOut 0.5s forwards;
+}
+.infiniteScale {
+	animation: infiniteScale 0.5s forwards;
+}
+
+@keyframes fadeOut {
+	0% {
+		transform: translate3d(0,0,0);
+		opacity: 1;
+	}
+	100% {
+		transform: translate3d(0,0,0);
+		opacity: 0;
+	}
+}
+@keyframes infiniteScale {
+	0% {
+		transform: scale(1.15) translate3d(0,0,0);
+	}
+	100% {
+		transform: scale(4.0) translate3d(0,0,0);
+	}
+}

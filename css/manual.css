@@ -1,0 +1,530 @@
+@charset "utf-8";
+/* reset----------------------------------------------------------------------*/
+body, div, th, td, p, ul, ol, dl, dt, dd, img, h1, h2, h3, h4, h5, h6,
+footer, header, nav, section, span, figure {
+	margin: 0;
+	padding: 0;
+	word-break: normal;
+}
+a {
+	text-decoration: none;
+}
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+/*------------------------------------------
+    font
+--------------------------------------------*/
+@font-face {
+  font-family: "Splatoon1";
+  src: url("../font/Splatoon1.otf");
+}
+@font-face {
+  font-family: "Splatoon2";
+  src: url("../font/Splatoon2.otf");
+}
+@font-face {
+  font-family: "rowdy";
+  src: url("../font/FOT-RowdyStd-EB.otf");
+  unicode-range: U+4E00-9FFF;
+}
+@font-face {
+  font-family: "kurokane";
+  src: url("../font/FOT-KurokaneStd-EB.otf");
+}
+
+html {
+	margin: 0;
+}
+body {
+	margin: 0;
+	width: 1280px;
+	min-height: 720px;
+	background-color: black; /*ページ切り替え時用の背景色*/
+	padding: 20px 0;
+	background-image: url("../img/bg_coop_orange.webp");
+	background-repeat: repeat-y;
+}
+/* 確認用デバッグ */
+.fontDefault {
+	font-family: initial !important;
+}
+.main {
+	padding: 20px 114px 30px 108px;
+	background-image: url("../img/bg_coop_paperMiddle.webp");
+	background-repeat: repeat-y;
+	z-index: 2;
+}
+.paperTop {
+	background-image: url("../img/bg_coop_paperTop.webp");
+	background-repeat: no-repeat;
+	background-size: 1280px 33px;
+	height: 33px;
+}
+.paperBottom {
+	background-image: url("../img/bg_coop_paperBottom.webp");
+	background-repeat: no-repeat;
+	background-size: 1280px 67px;
+	height: 67px;
+	position: relative;
+	margin-bottom: 16px;
+}
+.manualHeader {
+	font-size: 30px;
+	font-weight: bold;
+	padding: 0 25px;
+	margin-bottom: 5px;
+}
+.icoFooter {
+	position: absolute;
+	top: 0;
+	left: 130px;
+	background-image: url("../img/bg_coop_footer_bear.webp");
+	background-repeat: no-repeat;
+	background-size: 144px 45px;
+	width: 144px;
+	height: 45px;
+}
+.chapterHeader {
+	text-align: left;
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 60px;
+	width: 924px;
+	padding: 0 20px;
+	background-image: url("../img/img_common_hr.webp");
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+
+#backButton {
+	position: fixed;
+	top: 623px; /* 画面サイズ720 - 画像高さ99 + 2 */
+	z-index: 99;
+}
+.content {
+	padding: 0 25px;
+	width: 960px;
+}
+.itemList {
+	font-size: 28px;
+	margin: 40px 0 50px 0;
+	position: relative;
+}
+.itemHeader {
+	margin: 0 0 10px 55px;
+}
+.itemHeader:before {
+	content: '・ ';
+	margin: 0 0 6px -20px;
+}
+.itemCenterWrapper {
+	margin-bottom: 20px;
+}
+.hasTopMargin {
+	margin-top: 20px;
+}
+.itemCenter {
+	text-align: center;
+	font-weight: bold;
+	font-size: 30px;
+	line-height: 1.5;
+}
+.items {
+	list-style: none;
+	margin-left: 16px;
+}
+.items li:before {
+	content: '・';
+	margin-left: -28px;
+}
+.items li {
+	line-height: 1.5;
+	padding: 0 0px 0 15px;
+}
+.items li:not(:first-child) {
+	margin-top: 20px;
+}
+
+.itemList .isEm {
+	color: #FF0066;
+}
+.evaluationTable {
+	width: 752px;
+	height: 368px;
+	margin: 40px auto;
+	font-size: 14px;
+	background-image: url("../img/bg_coop_graph.webp");
+	background-repeat: no-repeat;
+	background-size: 752px 368px;
+}
+.tableHeader {
+	text-align: left;
+	padding: 0 16px;
+	line-height: 1.5;
+}
+.evaluationTable td {
+	text-align: center;
+	width: 100px;
+}
+.evaluationTable th {
+	height: 58px;
+}
+.line1 {
+	height: 72px;
+}
+.line6 {
+	transform: translate3d(0, -6px, 0);
+}
+.rotateRight4 {
+	transform: rotate(4deg);
+}
+.rotateLeft6 {
+	transform: rotate(-6deg);
+}
+.triangleWrapper {
+	position: relative;
+	margin: 40px 0 30px 0;
+}
+.triangleImg {
+	width: 568px;
+	margin-left: 280px;
+}
+.tableWrapper {
+	position: relative;
+}
+.redPen {
+	position: absolute;
+	left: 725px;
+	top: 180px;
+}
+.triangleContent {
+	left: 310px;
+	width: 490px;
+	position: absolute;
+	height: 590px;
+}
+.triangleContent div {
+	font-size: 22px;
+	color: #FF0066;
+	line-height: 1.5;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#stage1 {
+	margin-top: 85px;
+	height: 83px;
+	padding: 0 200px 0 160px;
+}
+
+#stage2 {
+	margin-top: 10px;
+	height: 145px;
+	padding: 0 135px 0 110px;
+}
+#stage2_USes {
+	margin-top: 10px;
+	height: 145px;
+	padding: 0 115px 0 90px;
+}
+#stage3 {
+	margin-top: 15px;
+	height: 135px;
+	padding: 0 50px 0 50px;
+}
+#memo1 {
+	top: 45px;
+	left: 100px;
+	width: 316px;
+	height: 71px;
+	background-image: url("../img/bg_coop_headline_01.webp");
+	background-repeat: no-repeat;
+}
+#memo2 {
+	top: 180px;
+	left: 35px;
+	width: 332px;
+	height: 97px;
+	background-image: url("../img/bg_coop_headline_02.webp");
+	background-repeat: no-repeat;
+}
+#memo3 {
+	top: 345px;
+	left: 0px;
+	width: 341px;
+	height: 98px;
+	background-image: url("../img/bg_coop_headline_03.webp");
+	background-repeat: no-repeat;
+}
+.memo {
+	font-size: 22px;
+	position: absolute;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.salmonStamp {
+	position: absolute;
+	top: 150px;
+	left: 700px;
+	background-image: url("../img/bg_coop_stamp.webp");
+	background-repeat: no-repeat;
+	background-size: 156px 174px;
+	width: 156px;
+	height: 174px;
+}
+.sticker1 {
+	position: absolute;
+	top: -200px;
+	left: 930px;
+	background-image: url("../img/bg_coop_sticker_01.webp");
+	background-repeat: no-repeat;
+	background-size: 154px 200px;
+	width: 154px;
+	height: 200px;
+}
+.sticker2 {
+	position: absolute;
+	top: -160px;
+	left: 920px;
+	background-image: url("../img/bg_coop_sticker_02.webp");
+	background-repeat: no-repeat;
+	background-size: 135px 167px;
+	width: 135px;
+	height: 167px;
+}
+.sticker3 {
+	position: absolute;
+	top: -55px;
+	left: -60px;
+	background-image: url("../img/bg_coop_sticker_03.webp");
+	background-repeat: no-repeat;
+	background-size: 170px 139px;
+	width: 170px;
+	height: 139px;
+}
+.sticker3_2 {
+	position: absolute;
+	bottom: -130px;
+	left: -60px;
+	background-image: url("../img/bg_coop_sticker_03.webp");
+	background-repeat: no-repeat;
+	background-size: 170px 139px;
+	width: 170px;
+	height: 139px;
+  z-index: 2;
+  transform: rotate(20deg);
+}
+.sticker4 {
+	position: absolute;
+	top: -210px;
+	left: 920px;
+	background-image: url("../img/bg_coop_sticker_04.webp");
+	background-repeat: no-repeat;
+	background-size: 160px 235px;
+	width: 160px;
+	height: 235px;
+}
+.sticker5 {
+	position: absolute;
+	top: -200px;
+	left: 915px;
+	background-image: url("../img/bg_coop_sticker_05.webp");
+	background-repeat: no-repeat;
+	background-size: 170px 210px;
+	width: 170px;
+	height: 210px;
+}
+.doodle1 {
+  position: absolute;
+  bottom: -30px;
+  left: 960px;
+  background-image: url("../img/bg_coop_doodle_01.webp");
+  background-repeat: no-repeat;
+  background-size: 112px 102px;
+  width: 112px;
+  height: 102px;
+}
+.doodle2 {
+  position: absolute;
+  bottom: -130px;
+  left: -60px;
+  background-image: url("../img/bg_coop_doodle_02.webp");
+  background-repeat: no-repeat;
+  background-size: 124px 120px;
+  width: 124px;
+  height: 120px;
+  z-index: 2;
+}
+.doodle3 {
+  position: absolute;
+  bottom: -120px;
+  left: 880px;
+  background-image: url("../img/bg_coop_doodle_03.webp");
+  background-repeat: no-repeat;
+  background-size: 156px 162px;
+  width: 156px;
+  height: 162px;
+  z-index: 2;
+}
+.doodle4 {
+  position: absolute;
+  bottom: -115px;
+  left: -25px;
+  background-image: url("../img/bg_coop_doodle_04.webp");
+  background-repeat: no-repeat;
+  background-size: 280px 80px;
+  width: 280px;
+  height: 80px;
+  z-index: 2;
+}
+.doodle5 {
+  position: absolute;
+  bottom: 60px;
+  left: 960px;
+  background-image: url("../img/bg_coop_doodle_05.webp");
+  background-repeat: no-repeat;
+  background-size: 110px 194px;
+  width: 110px;
+  height: 194px;
+}
+.doodle6 {
+  position: absolute;
+  bottom: -95px;
+  left: 200px;
+  background-image: url("../img/bg_coop_doodle_06.webp");
+  background-repeat: no-repeat;
+  background-size: 180px 117px;
+  width: 180px;
+  height: 117px;
+  z-index: 2;
+}
+.tape {
+	position: absolute;
+	top: -105px;
+	left: 878px;
+	background-image: url("../img/bg_coop_tape_02.webp");
+	background-repeat: no-repeat;
+	background-size: 208px 164px;
+	width: 208px;
+	height: 164px;
+}
+.clipHalfGreenFullOrangeTop {
+	position: absolute;
+	top: -85px;
+	left: 988px;
+	background-image: url("../img/bg_coop_clip_halfgreen_fullorange.webp");
+	background-repeat: no-repeat;
+	background-size: 130px 74px;
+	width: 130px;
+	height: 74px;
+}
+.clipHalfGreenFullPurpleTop {
+	position: absolute;
+	top: -85px;
+	left: 995px;
+	background-image: url("../img/bg_coop_clip_halfgreen_fullpurple.webp");
+	background-repeat: no-repeat;
+	background-size: 130px 74px;
+	width: 130px;
+	height: 74px;
+}
+.clipFullBlue {
+	position: absolute;
+	bottom: 125px;
+	left: 985px;
+	background-image: url("../img/bg_coop_clip_blue.webp");
+	background-repeat: no-repeat;
+	background-size: 130px 40px;
+	width: 130px;
+	height: 40px;
+}
+.clipHalfGreenFullOrangeBottom {
+	position: absolute;
+	bottom: 20px;
+	left: 988px;
+	background-image: url("../img/bg_coop_clip_halfgreen_fullorange.webp");
+	background-repeat: no-repeat;
+	background-size: 130px 74px;
+	width: 130px;
+	height: 74px;
+}
+.postitPurple {
+	position: absolute;
+	top: -60px;
+	left: 1020px;
+	background-image: url("../img/bg_coop_postit_purple_03.webp");
+	background-repeat: no-repeat;
+	background-size: 250px 112px;
+	width: 250px;
+	height: 112px;
+}
+.postitGreen {
+	position: absolute;
+	top: 60px;
+	left: 1195px;
+	background-image: url("../img/bg_coop_postit_green_02.webp");
+	background-repeat: no-repeat;
+	background-size: 64px 72px;
+	width: 64px;
+	height: 72px;
+	z-index: -1;
+}
+.postit_1_5 {
+	position: absolute;
+	top: -130px;
+	left: 890px;
+	background-image: url("../img/bg_coop_postit_1_5.webp");
+	background-repeat: no-repeat;
+	background-size: 252px 112px;
+	width: 252px;
+	height: 112px;
+}
+.postit_2_5 {
+	position: absolute;
+	top: -105px;
+	left: 880px;
+	background-image: url("../img/bg_coop_postit_2_5.webp");
+	background-repeat: no-repeat;
+	background-size: 253px 123px;
+	width: 253px;
+	height: 123px;
+}
+.postit_3_5 {
+	position: absolute;
+	top: -155px;
+	left: 880px;
+	background-image: url("../img/bg_coop_postit_3_5.webp");
+	background-repeat: no-repeat;
+	background-size: 255px 145px;
+	width: 255px;
+	height: 145px;
+}
+.postit_4_5 {
+	position: absolute;
+	top: -105px;
+	left: 885px;
+	background-image: url("../img/bg_coop_postit_4_5.webp");
+	background-repeat: no-repeat;
+	background-size: 248px 82px;
+	width: 248px;
+	height: 82px;
+}
+.postit_5_5 {
+	position: absolute;
+	top: -108px;
+	left: 880px;
+	background-image: url("../img/bg_coop_postit_5_5.webp");
+	background-repeat: no-repeat;
+	background-size: 254px 135px;
+	width: 254px;
+	height: 135px;
+}

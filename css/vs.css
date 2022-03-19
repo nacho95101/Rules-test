@@ -1,0 +1,596 @@
+﻿@charset "utf-8";
+/* reset----------------------------------------------------------------------*/
+body, div, th, td, p, ul, ol, dl, dt, dd, img, h1, h2, h3, h4, h5, h6,
+footer, header, nav, section, span, figure {
+	margin: 0;
+	padding: 0;
+	word-break: normal;
+}
+a {
+	text-decoration: none;
+}
+/*------------------------------------------
+    font
+--------------------------------------------*/
+@font-face {
+  font-family: "Splatoon1";
+  src: url("../font/Splatoon1.otf");
+}
+@font-face {
+  font-family: "Splatoon2";
+  src: url("../font/Splatoon2.otf");
+}
+@font-face {
+  font-family: "newrodinpro";
+  src: url("../font/nintendoP_NewRodin-B.ttf");
+}
+@font-face {
+  font-family: "rowdy";
+  src: url("../font/FOT-RowdyStd-EB.otf");
+  unicode-range: U+4E00-9FFF;
+}
+@font-face {
+  font-family: "kurokane";
+  src: url("../font/FOT-KurokaneStd-EB.otf");
+}
+/*------------------------------------------
+    html, body
+--------------------------------------------*/
+html {
+	margin: 0;
+}
+body {
+	margin: 0;
+	width: 1280px;
+	min-height: 720px;
+	background-color: black; /*ページ切り替え時用の背景色*/
+}
+/*------------------------------------------
+    汎用的
+--------------------------------------------*/
+.blurFilter {
+	/*filter: blur(4px);*/
+}
+/*.blurFilter {
+	animation: RemoveBlurFilter 0.3s;
+	animation-fill-mode: both;
+}*/
+.isHidden {
+	display: none !important;
+}
+.indentSmall {
+	margin-top: 15px;
+}
+.indentMedium {
+	margin-top: 30px;
+}
+.indentLarge {
+	margin-top: 50px;
+}
+.indentXLarge {
+	margin-top: 75px;
+}
+/*------------------------------------------
+    animation
+--------------------------------------------*/
+@keyframes InkDrop {
+0% {
+  transform: translate3d(0,0,0);
+  transition-timing-function: cubic-bezier(0,.5,.5,1);
+}
+100% {
+	transform: translate3d(0,60px,0);
+}
+}
+@keyframes InkDisappear {
+0% {
+  transform: translate3d(0,60px,0);
+  opacity: 1;
+  transition-timing-function: cubic-bezier(0,.5,.5,1);
+}
+100% {
+	transform: translate3d(0,100px,0);
+  opacity: 0;
+}
+}
+@keyframes LRKeyDown {
+0% {
+  transform: scale(1,1);
+}
+25% {
+  transform: scale(0.8,0.8);
+}
+100% {
+  transform: scale(1,1);
+}
+}
+@keyframes FrameInkDrop {
+0% {
+  transform: translate3d(0,0,0);
+  transition-timing-function: ease-in;
+}
+100% {
+	transform: translate3d(0,60px,0);
+}
+}
+@keyframes RemoveBlurFilter {
+0% {
+  filter: blur(4px);
+}
+100% {
+	filter: blur(0);
+}
+}
+@keyframes FadeIn {
+0% {
+  opacity: 0;
+}
+100% {
+	opacity: 1;
+}
+}
+/*------------------------------------------
+    メニューボタン
+--------------------------------------------*/
+#twoButtonMenu {
+  width: 1032px;
+	margin: 0 124px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+	opacity: 0;
+}
+.twoImageWrapper {
+	display: flex;
+	justify-content: flex-start;
+	margin: 40px 0 35px 0;
+}
+.twoImageWrapper div:first-child{
+	margin: 0 30px 0 0px;
+}
+.buttonL {
+  position: absolute;
+  top: 10px;
+  left: -104px;
+}
+.buttonR {
+  position: absolute;
+  top: 10px;
+  right: -104px;
+}
+.keyDown {
+  animation: LRKeyDown .2s;
+}
+.offTab {
+	background: url(../img/bg_common_pattern_lightgray.webp) repeat !important;
+}
+.onTab {
+	background: url(../img/bg_common_pattern_green.webp) repeat !important;
+}
+.menu .inkDropWrapper {
+  position: relative;
+  height: 80px;
+}
+.twoColumnButton{
+  width: 500px;
+	height: 80px;
+	text-align: center;
+	font-size: 38px;
+	line-height: 80px;
+	/*font-family: "Splatoon1";*/
+	color: #fff;
+  text-shadow: 4px 2px 1px rgba(25,25,25,.5);
+  background: url(../img/bg_common_pattern_lightgray.webp) repeat;
+  position: relative;
+  border-radius: 0 0 20px 20px;
+  z-index: 2;
+}
+.twoColumnButtonShadow {
+  width: 500px;
+  height: 85px;
+  margin: 0 auto;
+  position: absolute;
+  top: -5px;
+  left: 0;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 4px 4px 0 0 rgba(0,0,0,0.6);
+}
+.ruleContent {
+	min-height: 312px; /* 画像高さ */
+}
+.drop {
+  position: absolute;
+  background: url("../img/bg_vs_drop.webp") no-repeat;
+  width: 50px;
+  height: 50px;
+  right: 30px;
+  top: 5px;
+  z-index: 1;
+}
+.dropFocus {
+  animation: InkDrop .7s forwards;
+}
+.dropUnfocus {
+  animation: InkDisappear .2s forwards;
+}
+.frameDrop {
+	position: absolute;
+  background: url("../img/bg_vs_drop_frame.webp") no-repeat;
+  width: 50px;
+  height: 50px;
+  left: 380px;
+  bottom: 60px;
+  z-index: 1;
+}
+.frameDropAnim {
+  animation: InkDrop .7s .7s forwards;
+}
+/*------------------------------------------
+    ルールと種目
+--------------------------------------------*/
+#regular {
+	padding-top: 40px;
+	background-image: url("../img/bg_vs_green.webp");
+	background-repeat: repeat-y;
+}
+#fes {
+	padding-top: 40px;
+	background-image: url("../img/bg_vs_purple_green.webp");
+	background-repeat: repeat-y;
+}
+#league {
+	padding-top: 110px;
+	background-image: url("../img/bg_vs_pink.webp");
+	background-repeat: repeat-y;
+}
+#gati {
+	padding-top: 110px;
+	background-image: url("../img/bg_vs_orange.webp");
+	background-repeat: repeat-y;
+}
+#area {
+	padding-top: 60px;
+	background-image: url("../img/bg_vs_pattern_01.webp"), url("../img/bg_vs_gray.webp");
+	background-repeat: repeat, repeat-y;
+}
+#yagura {
+	padding-top: 60px;
+	background-image: url("../img/bg_vs_pattern_03.webp"), url("../img/bg_vs_gray.webp");
+	background-repeat: repeat, repeat-y;
+}
+#hoko {
+	padding-top: 60px;
+	background-image: url("../img/bg_vs_pattern_02.webp"), url("../img/bg_vs_gray.webp");
+	background-repeat: repeat, repeat-y;
+}
+#asari {
+	padding-top: 60px;
+	background-image: url("../img/bg_vs_pattern_01.webp"), url("../img/bg_vs_gray.webp");
+	background-repeat: repeat, repeat-y;
+}
+/*------------------------------------------
+    部品
+--------------------------------------------*/
+.shadow {
+  width: 1280px;
+  height: 1120px;
+  position: fixed;
+  top: -200px;
+  left: 0;
+  box-shadow: 0px 0px 300px 200px rgba(0, 0, 0, 0.26) inset;
+}
+.logoHeader {
+	margin-bottom: 15px;
+	padding: 0 40px;
+	position: relative;
+}
+.logoHeader img {
+	height: 131px;
+	position: absolute;
+	bottom: -15px;
+}
+.logoHeaderText {
+	/*font-family: 'Splatoon1';*/
+	color: white;
+	font-size: 46px;
+	line-height: 46px;
+	font-weight: normal;
+	padding: 0 0 0 140px;
+}
+/* イカヘッダー */
+.ikaHeader {
+	position: absolute;
+	top: -83px;
+	left: -115px;
+	width: 810px;
+	height: 170px;
+	/*font-family: 'Splatoon1';*/
+	font-size: 40px;
+	line-height: 97px;
+	font-weight: normal;
+	background-image: url("../img/bg_vs_headline_squid.webp");
+	background-repeat: no-repeat;
+	color: black;
+}
+.ikaHeaderText {
+	transform: translate(95px, 74px) rotate(-7deg);
+	transform-origin: 0 0;
+}
+.ikaHeaderName {
+	color: #A51EE1;
+}
+/* 画像つき説明 */
+.imgDescriptionWrapper {
+	display: inline-block;
+	width: 500px;
+	margin-left: 10px;
+}
+.imgDescription {
+	height: 78px;
+	background-image: url("../img/bg_vs_headline_caption.webp");
+	background-repeat: no-repeat;
+	background-position: right;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	margin-left: 4px;
+	color: white;
+	font-weight: normal;
+	letter-spacing: 1px;
+}
+.imgDescription.line2 {
+	background-image: url("../img/bg_vs_headline_caption_line2.webp");
+	height: 90px;
+}
+.imgDescriptionText {
+	margin-top: 6px;
+	font-size: 30px;
+	width: 340px;
+}
+.imgDescriptionText.line2 {
+	margin-top: 0;
+	line-height: 1.15;
+}
+.imgDescriptionText .narrowFont {
+  display: inline-block;
+  transform: scale(0.7, 1);
+  transform-origin: left;
+  margin-right: -9px;
+}
+.imgDescriptionIndex {
+	width: 90px;
+	text-align: center;
+	margin: 6px 2px 0 4px;
+	font-size: 37px;
+}
+.imgDescriptionIndex.line2 {
+	width: 86px;
+	text-align: center;
+	margin: 2px 14px 0 12px;
+}
+.imgDescription:not(:first-child) {
+	margin-top: 4px;
+}
+.descriptionImg {
+	float: left;
+	margin: 0 5px 0 0;
+}
+.descriptionImg:before, .descriptionImg:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+/* プレートヘッダー */
+.plateHeader {
+	/*font-family: 'Splatoon2';*/
+	color: white;
+	font-size: 40px;
+	margin: 0 60px 15px 60px;
+	font-weight: normal;
+	letter-spacing: 2px;
+	line-height: 1.0;
+}
+.plateHeader .narrowFont {
+  display: inline-block;
+  /*font-family: "kurokane";*/
+  transform: scale(0.7, 1);
+  transform-origin: left;
+  margin-right: -12px;/*フォントサイズ40px*0.3 */
+}
+/* プレート */
+.bgPlate {
+	position: relative;
+	margin: 50px 105px;
+	padding: 35px 0;
+	border-radius: 50px;
+  opacity: 0;
+}
+.fadeIn {
+  animation: FadeIn .5s .1s forwards;
+}
+.bgPlateContent {
+	padding: 0 60px;
+	overflow: hidden;
+	/*font-family: 'newrodinpro',"NintendoExt003";*/
+	font-size: 22px;
+	color: white;
+	line-height: 35px;
+}
+.bgPlateContent.isNarrow {
+	padding: 0 30px 0 60px;
+}
+.bgPlateHook {
+	position: absolute;
+	top: 100px;
+	left: 200px;
+}
+.plateZigzag {
+	background-image: url("../img/bg_common_plate_zigzag_black.webp");
+	background-repeat: repeat;
+	background-position: left top;
+}
+.leftContent {
+}
+.rightContent {
+}
+.mainContent {
+	padding: 20px 0;
+}
+/* 画像フレーム */
+.screenshotWrapperPink {
+	width: 460px;
+	height: 312px;
+	background-image: url("../img/bg_vs_picframe_pink.webp");
+	background-repeat: no-repeat;
+	margin-top: 7px !important;
+}
+.screenshotWrapperGreen {
+	width: 460px;
+	height: 312px;
+	background-image: url("../img/bg_vs_picframe_green.webp");
+	background-repeat: no-repeat;
+	margin-top: 7px !important;
+}
+/*インクが垂れる画像フレーム用*/
+.bgPlateContent .inkDropWrapper {
+  position: relative;
+  float: left;
+}
+.inkDropWrapper .screenshotWrapperGreen {
+  background-image: url("../img/bg_vs_picframe_green_no_ink.webp");
+  position: relative;
+  z-index: 2;
+}
+.screenshot {
+	margin: 18px 17px 20px 17px;
+	width: 426px;
+  height: 240px;
+}
+.screenshotEmpty {
+	margin: 18px 17px 20px 17px;
+	width: 426px;
+  height: 240px;
+}
+.rightSideImg {
+	float: right;
+	margin: 0 0 0 40px;
+}
+.rightSideImg:before, .rightSideImg:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.leftSideImg {
+	float: left;
+	margin: 0 40px 0 0;
+}
+.leftSideImg:before, .leftSideImg:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+/* 点線 */
+.tensen {
+	width: 100%;
+	background-image: url("../img/bg_vs_dotted_line_white.webp");
+	background-repeat: repeat-x;
+	height: 8px;
+	margin: 0 0 15px 0;
+}
+/* フック */
+.bgHookInk {
+	/*font-family: 'Splatoon2';*/
+	border-radius: 50px;
+	margin: 60px 105px 85px 105px; /* marginTop: 40 + 画像高さ */
+	color: white;
+	padding :35px 140px;
+	position: relative;
+	text-shadow: 4px 2px 1px rgba(25,25,25,.5);
+}
+.bgHookInk {
+	text-align: center;
+}
+.bgHookInkPurple {
+	background-image:
+		url("../img/bg_common_plate_ink_L.webp"),
+		url("../img/bg_common_plate_ink_R.webp"),
+		url("../img/bg_common_plate_zigzag_purple.webp");
+	background-repeat:
+		no-repeat,
+		no-repeat,
+		repeat;
+	background-position:
+		left top,
+		right bottom,
+		left top;
+}
+.bgHookInkPink {
+	background-image:
+		url("../img/bg_common_plate_ink_L.webp"),
+		url("../img/bg_common_plate_ink_R.webp"),
+		url("../img/bg_common_plate_zigzag_pink.webp");
+	background-repeat:
+		no-repeat,
+		no-repeat,
+		repeat;
+	background-position:
+		left top,
+		right bottom,
+		left top;
+}
+.bgHookInkGreen {
+	background-image:
+		url("../img/bg_common_plate_ink_L.webp"),
+		url("../img/bg_common_plate_ink_R.webp"),
+		url("../img/bg_common_plate_zigzag_green.webp");
+	background-repeat:
+		no-repeat,
+		no-repeat,
+		repeat;
+	background-position:
+		left top,
+		right bottom,
+		left top;
+}
+.bgHookInkBlue {
+	background-image:
+		url("../img/bg_common_plate_ink_L.webp"),
+		url("../img/bg_common_plate_ink_R.webp"),
+		url("../img/bg_common_plate_zigzag_blue.webp");
+	background-repeat:
+		no-repeat,
+		no-repeat,
+		repeat;
+	background-position:
+		left top,
+		right bottom,
+		left top;
+}
+.bgHookContent {
+	font-size: 40px;
+	line-height: 60px;
+}
+.bgHookContent .narrowFont {
+  display: inline-block;
+  /*font-family: "kurokane";*/
+  transform: scale(0.7, 1);
+  transform-origin: left;
+  margin-right: -12px;/*フォントサイズ40px*0.3 */
+}
+.hookImg {
+	position: absolute;
+	z-index: 1;
+	top: -59px;
+	left: 494px;
+}
+/*------------------------------------------
+    操作ボタン
+--------------------------------------------*/
+#backButton {
+	position: fixed;
+	top: 623px; /* 画面サイズ720 - 画像高さ99 + 2 */
+	z-index: 99;
+}
+#backButton img {
+	width: 122px;
+}

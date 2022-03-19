@@ -1,0 +1,572 @@
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=1280,height=720" />
+<meta name="viewport" content="user-scalable=no" />
+<meta name="focus-ring-visibility" content="hidden" />
+<title>VS</title>
+<link rel="stylesheet" href="../../css/vs.css" id="changestyle" />
+<script type="text/javascript" src="../../js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script src="../../js/vs.js"></script>
+</head>
+<body>
+  <div class="disableTouch">
+    <div class="shadow"></div>
+    <div id="backButton" class="blurFilter">
+      <img src="../../img/btn_common_back.webp" />
+    </div>
+    <div id="twoButtonMenu" class="menu isHidden blurFilter">
+      <img src="../../img/btn_common_L.webp" class="buttonL" />
+      <div class="inkDropWrapper">
+        <p id="matchButton" class="twoColumnButton headerButton onTab">
+          <span data-msgid="textbox_id-1">Mode</span>
+        </p>
+        <div class="drop"></div>
+        <div class="twoColumnButtonShadow"></div>
+      </div>
+      <div class="inkDropWrapper ruleButton isHidden" name='area'>
+        <p class="twoColumnButton headerButton offTab">
+          <span data-msgcom="true" data-msgid="textbox_id-30002">Splat Zones</span>
+        </p>
+        <div class="drop"></div>
+        <div class="twoColumnButtonShadow"></div>
+      </div>
+      <div class="inkDropWrapper ruleButton isHidden" name='yagura'>
+        <p class="twoColumnButton headerButton offTab">
+          <span data-msgcom="true" data-msgid="textbox_id-30003">Tower Control</span>
+        </p>
+        <div class="drop"></div>
+        <div class="twoColumnButtonShadow"></div>
+      </div>
+      <div class="inkDropWrapper ruleButton isHidden" name='hoko'>
+        <p class="twoColumnButton headerButton offTab">
+          <span data-msgid="textbox_id-4">Rainmaker</span>
+        </p>
+        <div class="drop"></div>
+        <div class="twoColumnButtonShadow"></div>
+      </div>
+      <div class="inkDropWrapper ruleButton isHidden" name='asari'>
+        <p class="twoColumnButton headerButton offTab">
+          <span data-msgcom="true" data-msgid="textbox_id-60073">Clam Blitz</span>
+        </p>
+        <div class="drop"></div>
+        <div class="twoColumnButtonShadow"></div>
+      </div>
+      <img src="../../img/btn_common_R.webp" class="buttonR" />
+    </div>
+    <div id="gati" class="mainContent isHidden">
+      <div class="bgPlate plateZigzag blurFilter">
+        <img src="../../img/bg_common_plate_hook_black.webp" class="hookImg" />
+        <h1 id="headerGati" class="logoHeader">
+          <img class="ruleLogo" />
+          <p class="logoHeaderText">
+            <span data-msgid="textbox_id-5">Ranked Battles</span>
+          </p>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <div class="inkDropWrapper">
+            <div class="screenshotWrapperGreen leftSideImg">
+              <img src="../../img/EU/pic_vs_ranked_udemae.webp" class="screenshot" />
+            </div>
+            <div class="frameDrop"></div>
+          </div>
+          <div class="rightContent">
+            <span data-msgid="textbox_id-6">Ranked Battles are extreme battles for Inklings who demand more from life than regular battles can provide!<br />In this mode, winning really is everything.<br />If you want to attain the highest rank, you simply have to beat the other contenders!</span>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag blurFilter">
+        <h1 class="ikaHeader">
+          <p class="ikaHeaderText">
+            <span class="ikaHeaderName" data-msgid="textbox_id-7">Rank</span>
+          </p>
+        </h1>
+        <div class="bgPlateContent">
+          <div class="twoImageWrapper">
+            <div class="screenshotWrapperPink">
+              <img src="../../img/EU/pic_vs_ranked_udemaemeter_1.webp" class="screenshot" />
+            </div>
+            <div class="screenshotWrapperGreen">
+              <img src="../../img/EU/pic_vs_ranked_udemaemeter_2.webp" class="screenshot" />
+            </div>
+          </div>
+          <div>
+            <span data-msgid="textbox_id-8">In Ranked Battles, players are ranked for each individual battle mode. When victorious in battle, the Rank Meter for that mode will rise. Once the Rank Meter fills up, you'll progress to the next rank!<br />Defeat will put a crack in your Rank Meter, and each crack brings it closer to the breaking point. If it breaks, you'll keep your current rank provided the meter was above the middle line, but if it was below the middle line, you'll drop a rank.</span>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader">
+          <span data-msgid="textbox_id-9">Power Rating</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <div class="screenshotWrapperPink rightSideImg">
+            <img src="../../img/EU/pic_vs_ranked_gachi_power.webp" class="screenshot" />
+          </div>
+          <div class="leftContent">
+            <span data-msgid="textbox_id-10">Once you gain a certain amount of experience, the estimated power rating of each team's players will be displayed on-screen when starting a battle. The power rating provides a more precise estimation of a player's skill level than their rank does.<br />A battle against players with a certain rank and a high power rating will be more competitive than one fought against players of the same rank with a lower rating. Defeating a team with a high power rating will raise your Rank Meter by a large amount!</span>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader splatoon2Font">
+          <span data-msgid="textbox_id-11">Skipping a Rank</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <span data-msgid="textbox_id-12">When you show a particularly stunning display of skill in battle and manage to fill your Rank Meter, you might jump more than a single rank in one go!</span>
+        </div>
+      </div>
+    </div>
+    <div id="league" class="mainContent isHidden">
+      <div class="bgPlate plateZigzag blurFilter">
+        <img src="../../img/bg_common_plate_hook_black.webp" class="hookImg" />
+        <h1 id="headerGati" class="logoHeader">
+          <img class="ruleLogo" />
+          <p class="logoHeaderText">
+            <span data-msgid="textbox_id-13">League Battles</span>
+          </p>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <div class="inkDropWrapper">
+            <div class="screenshotWrapperGreen leftSideImg">
+              <img src="../../img/EU/pic_vs_league_overall.webp" class="screenshot" />
+            </div>
+            <div class="frameDrop"></div>
+          </div>
+          <div class="rightContent">
+            <span data-msgid="textbox_id-14">In League Battles, you must form a team and aim to get more victories than anyone else within a set amount of time.<br />Every two hours the stage changes, signaling the start of a new League Battle session. Wins and losses during a session are reflected in your League Power rating, and it is this rating that decides the winners at the end of the two hours.<br />Your opponents will be selected from other teams with a similar League Power. It's up to you to take them down with the best strategies your team can put together!<br />Remember, although Ranked Battle rules are in effect, your actual rank won't change, so take this opportunity to freely put your skills to the test.</span>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag blurFilter">
+        <h1 class="ikaHeader">
+          <p class="ikaHeaderText">
+            <span class="ikaHeaderName" data-msgid="textbox_id-15">League Power</span>
+          </p>
+        </h1>
+        <div class="bgPlateContent">
+          <div class="screenshotWrapperPink rightSideImg indentSmall">
+            <img src="../../img/EU/pic_vs_league_lp.webp" class="screenshot" />
+          </div>
+          <div class="leftContent indentLarge">
+            <span data-msgid="textbox_id-16">League Power is a power rating that expresses your team's performance. When you first start out, you won't have a League Power rating—it'll be displayed as TBD. After seven battles, though, you'll get to see your League Power!<br />From the eighth battle on, your League Power rating will change to reflect your wins and losses. Emerging victorious against opponents with a high League Power rating is a quick way to raise your own League Power.<br />Your position in the league is determined by the highest point your League Power rating reaches, so do your best, battle after battle, until the time is up!<br />Teams whose League Power is still undetermined will be matched with those whose performance in past League Battles and Ranked Battles is as close as possible to their own.</span>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader splatoon2Font">
+          <span data-msgid="textbox_id-17">Pair Play and Team Play</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <div class="screenshotWrapperGreen leftSideImg">
+            <img src="../../img/EU/pic_vs_league_team_pair.webp" class="screenshot" />
+          </div>
+          <div class="rightContent">
+            <span data-msgid="textbox_id-18">You can participate in League Battles as a duo in the Pair Division, or in a group of four in the Team Division.<br />You'll battle against players who chose the same division as you, and each division has its own leaderboard.</span>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader splatoon2Font">
+          <span data-msgid="textbox_id-19">Results and Position</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <div class="screenshotWrapperPink rightSideImg">
+            <img src="../../img/EU/pic_vs_league_result.webp" class="screenshot" />
+          </div>
+          <div class="leftContent">
+            <span data-msgid="textbox_id-20">League Battle sessions last for two hours, at which point the stage changes and a new session begins. Shortly after a session ends, the results are displayed. You'll be able to see where your team placed compared to other teams who have also fought seven or more battles.<br />The lucky ones who place highly will receive commemorative medals!</span>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader splatoon2Font">
+          <span data-msgid="textbox_id-21">Changing Members</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <span data-msgid="textbox_id-22">League Power is calculated based on each complete team or pair. If the members of a team or pair change, it will be viewed as a new team/pair when calculating League Power. But don't worry—your old team's League Power will be saved for later in case you decide to reunite.</span>
+        </div>
+      </div>
+    </div>
+    <div id="area" class="mainContent isHidden">
+      <div class="bgHookInkPurple bgHookInk">
+        <p class="bgHookContent splatoon2Font">
+          <span data-msgid="textbox_id-23">Splatter the Splat Zones with ink and hold your turf to emerge victorious!</span>
+        </p>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <img src="../../img/bg_common_plate_hook_black.webp" class="hookImg" />
+        <h1 id="headerGati" class="logoHeader"> <img class="ruleLogo" />
+          <p class="logoHeaderText">
+            <span data-msgcom="true" data-msgid="textbox_id-30002">Splat Zones</span>
+          </p>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent isNarrow">
+          <div class="inkDropWrapper">
+            <div class="screenshotWrapperGreen descriptionImg indentLarge">
+              <img src="../../img/EU/pic_vs_rule_area_screen.webp" class="screenshot" />
+            </div>
+            <div class="frameDrop"></div>
+          </div>
+          <div class="imgDescriptionWrapper">
+            <div class="imgDescription">
+              <div class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30069"><span data-msgid="textbox_id-81">1</span></div>
+              <div class="imgDescriptionText splatoon2Font" data-msgcom="true" data-msgid="textbox_id-30002"><span data-msgid="textbox_id-82">Splat Zone</span></div>
+            </div>
+            <div class="imgDescription">
+              <div class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30070"><span data-msgid="textbox_id-83">2</span></div>
+              <div class="imgDescriptionText splatoon2Font"><span data-msgid="textbox_id-84">Control Indicator</span></div>
+            </div>
+            <div class="imgDescription">
+              <div class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30071"><span data-msgid="textbox_id-85">3</span></div>
+              <div class="imgDescriptionText splatoon2Font"><span data-msgid="textbox_id-86">Timer</span></div>
+            </div>
+            <div class="imgDescription">
+              <div class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30072"><span data-msgid="textbox_id-87">4</span></div>
+              <div class="imgDescriptionText splatoon2Font"><span data-msgid="textbox_id-88">Penalties</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader splatoon2Font">
+          <span data-msgcom="true" data-msgid="textbox_id-30033">Rules</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <div class="screenshotWrapperPink rightSideImg">
+            <img src="../../img/EU/pic_vs_rule_area_overall.webp" class="screenshot" />
+          </div>
+          <div class="leftContent indentXLargeTop">
+            <span data-msgid="textbox_id-34">Whichever team holds the Splat Zones for the required amount of time wins!<br />The first thing to do is to claim Splat Zones by covering them in ink.<br />You can check how much of the area you've inked by looking at the Control Indicator.<br />Once you claim all the Splat Zones, your team's timer will start to count down. If it reaches zero, that's a knockout victory!</span>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader">
+          <span data-msgcom="true" data-msgid="textbox_id-30035">Tips</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <span data-msgid="textbox_id-36">Going on your own to retake a Splat Zone guarded by your opponents is no easy task. Group up with your allies and strike together!<br />Conversely, it's important to scatter your opponents and prevent them from operating as a unit when you're the one defending!</span>
+        </div>
+      </div>
+    </div>
+    <div id="yagura" class="mainContent isHidden">
+      <div class="bgHookInkGreen bgHookInk">
+        <p class="bgHookContent splatoon2Font">
+          <span data-msgid="textbox_id-37">The team that rides the Tower<br />to the goal in the enemy base wins!</span>
+        </p>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <img src="../../img/bg_common_plate_hook_black.webp" class="hookImg" />
+        <h1 id="headerGati" class="logoHeader">
+          <img class="ruleLogo" />
+          <p class="logoHeaderText">
+            <span data-msgcom="true" data-msgid="textbox_id-30003">Tower Control</span>
+          </p>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent isNarrow">
+          <div class="inkDropWrapper">
+            <div class="screenshotWrapperGreen descriptionImg indentMedium">
+              <img src="../../img/EU/pic_vs_rule_lift_screen.webp" class="screenshot" />
+            </div>
+            <div class="frameDrop"></div>
+          </div>
+          <div class="imgDescriptionWrapper">
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30069">1</span>
+              <span class="imgDescriptionText splatoon2Font" data-msgcom="true" data-msgid="textbox_id-30003">Tower Control</span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30070">2</span>
+              <span class="imgDescriptionText splatoon2Font" data-msgcom="true" data-msgid="textbox_id-30042">Goal</span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30071">3</span>
+              <span class="imgDescriptionText splatoon2Font" data-msgid="textbox_id-44">Checkpoints</span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30072">4</span>
+              <span class="imgDescriptionText splatoon2Font" data-msgcom="true" data-msgid="textbox_id-30046">Counter</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader splatoon2Font">
+          <span data-msgcom="true" data-msgid="textbox_id-30033">Rules</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <div class="ruleContent">
+            <div class="screenshotWrapperPink rightSideImg">
+              <img src="../../img/EU/pic_vs_rule_lift_wall.webp" class="screenshot" />
+            </div>
+            <div class="leftContent">
+              <span data-msgid="textbox_id-48">Claim victory by riding the Tower in the center of the stage to the goal point in the enemy base!<br />Start by inking the sides of the Tower and getting on top to claim it. The Tower will automatically make its way toward the enemy base!<br />If you get splatted and the enemy takes control of the Tower, or if it sits too long without anyone riding it, it will head back towards the center of the stage.</span>
+            </div>
+          </div>
+          <div class="ruleContent indentMedium">
+            <div class="screenshotWrapperGreen leftSideImg">
+              <img src="../../img/EU/pic_vs_rule_lift_checkpoint.webp" class="screenshot" />
+            </div>
+            <div class="rightContent">
+              <span data-msgid="textbox_id-49">There are checkpoints along the route to the goal. The Tower will stop for a short while when it passes over a checkpoint. Maintain control of the Tower until the checkpoint's defenses are reduced to zero, at which point you will be able to proceed.<br />Once you've cleared a checkpoint you'll be able to pass through it again without stopping. However, a checkpoint will slowly recover its defenses if you were unable to clear it previously.</span>
+            </div>
+          </div>
+          <div class="ruleContent indentMedium">
+            <div class="screenshotWrapperPink rightSideImg">
+              <img src="../../img/EU/pic_vs_rule_lift_count.webp" class="screenshot" />
+            </div>
+            <div class="leftContent">
+              <span data-msgid="textbox_id-50">As the Tower approaches the goal, your Goal Distance will decrease. If the battle ends without either team reaching the goal, the team with the lowest Goal Distance will win!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader">
+          <span data-msgcom="true" data-msgid="textbox_id-30035">Tips</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <span data-msgid="textbox_id-52">Players riding the Tower are a clear target for enemy players, so other teammates should go on ahead and make sure the way is safe!<br />If the enemy team controls the Tower, remember that it will stop at checkpoints. That's your chance to come together as a team and take the Tower from the enemy!</span>
+        </div>
+      </div>
+    </div>
+    <div id="hoko" class="mainContent isHidden">
+      <div class="bgHookInkPink bgHookInk">
+        <p class="bgHookContent splatoon2Font">
+          <span data-msgid="textbox_id-53">The team that carries the Rainmaker<br />to the goal in the enemy base wins!</span>
+        </p>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <img src="../../img/bg_common_plate_hook_black.webp" class="hookImg" />
+        <h1 id="headerGati" class="logoHeader">
+          <img class="ruleLogo" />
+          <p class="logoHeaderText">
+            <span data-msgcom="true" data-msgid="textbox_id-30054">Rainmaker</span>
+          </p>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent isNarrow">
+          <div class="inkDropWrapper">
+            <div class="screenshotWrapperGreen descriptionImg indentMedium">
+              <img src="../../img/EU/pic_vs_rule_goal_screen.webp" class="screenshot" />
+            </div>
+            <div class="frameDrop"></div>
+          </div>
+          <div class="imgDescriptionWrapper">
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30069">1</span>
+              <span class="imgDescriptionText splatoon2Font" data-msgcom="true" data-msgid="textbox_id-30054">Rainmaker</span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30070">2</span>
+              <span class="imgDescriptionText splatoon2Font" data-msgcom="true" data-msgid="textbox_id-30042">Goal</span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30071">3</span>
+              <span class="imgDescriptionText splatoon2Font" span="" data-msgid="textbox_id-60">Time Left Holding Rainmaker</span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30072">4</span>
+              <span class="imgDescriptionText splatoon2Font" data-msgcom="true" data-msgid="textbox_id-30046">Counter</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader splatoon2Font">
+          <span data-msgcom="true" data-msgid="textbox_id-30033">Rules</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <div class="ruleContent">
+            <div class="screenshotWrapperPink rightSideImg">
+              <img src="../../img/EU/pic_vs_rule_goal_barrier.webp" class="screenshot" />
+            </div>
+            <div class="leftContent">
+              <span data-msgid="textbox_id-64">Claim victory by carrying the Rainmaker to the goal in the enemy base!<br />First, make a beeline for the Rainmaker in the middle of the stage.<br />It's protected by a shield, so you'll have to break it out first. Be careful—the Rainmaker will return to its starting position if you leave it lying around without its shield!</span>
+            </div>
+          </div>
+          <div class="ruleContent indentMedium">
+            <div class="screenshotWrapperGreen leftSideImg">
+              <img src="../../img/EU/pic_vs_rule_goal_shot.webp" class="screenshot" />
+            </div>
+            <div class="rightContent">
+              <span data-msgid="textbox_id-65">Once you've grabbed the Rainmaker, head for the goal!<br />As you get closer, your Goal Distance will reduce.<br />A warning—the Rainmaker is pretty hefty. You won't be able to Super Jump or use your equipped weapons while carrying it. But you CAN use the Rainmaker to fire an extra powerful shot!<br />There is a limit to how long you can hold the Rainmaker before it inksplodes and splats you, so be careful! If you run out of time or get splatted, the Rainmaker will be dropped. Its shield will also reactivate.</span>
+            </div>
+          </div>
+          <div class="ruleContent indentMedium">
+            <div class="screenshotWrapperPink rightSideImg">
+              <img src="../../img/EU/pic_vs_rule_goal_count.webp" class="screenshot" />
+            </div>
+            <div class="leftContent">
+              <span data-msgid="textbox_id-66">If the battle ends without anyone carrying the Rainmaker to the goal, the team with the lowest Goal Distance wins!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader">
+          <span data-msgcom="true" data-msgid="textbox_id-30035">Tips</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <div class="leftContent">
+            <span data-msgid="textbox_id-68">The most important thing in this mode is to keep pushing forward with the Rainmaker!<br />Seize any chance you get and push forward aggressively. If your teammate has the Rainmaker, go on ahead and clear a path for them!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="asari" class="mainContent isHidden">
+      <div class="bgHookInkBlue bgHookInk">
+        <p class="bgHookContent splatoon2Font">
+          <span><span data-msgid="textbox_id-30074">Throw a Power Clam at the barrier protecting the enemy's basket to break it.<br />The team that gets the most clams in the other team's basket wins!</span></span>
+        </p>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <img src="../../img/bg_common_plate_hook_black.webp" class="hookImg" />
+        <h1 id="headerGati" class="logoHeader">
+          <img class="ruleLogo" />
+          <p class="logoHeaderText">
+            <span data-msgcom="true" data-msgid="textbox_id-60073">Clam Blitz</span>
+          </p>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent isNarrow">
+          <div class="inkDropWrapper">
+            <div class="screenshotWrapperGreen descriptionImg indentMedium">
+              <img src="../../img/EU/pic_vs_rule_00_screen.webp" class="screenshot" />
+            </div>
+            <div class="frameDrop"></div>
+          </div>
+          <div class="imgDescriptionWrapper">
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30069">1</span>
+              <span class="imgDescriptionText splatoon2Font"><span data-msgid="textbox_id-30076">Clam</span></span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30070">2</span>
+              <span class="imgDescriptionText splatoon2Font"><span data-msgid="textbox_id-30096">Power Clam</span></span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30071">3</span>
+              <span class="imgDescriptionText splatoon2Font"><span data-msgid="textbox_id-30078">Basket</span></span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex" data-msgcom="true" data-msgid="textbox_id-30072">4</span>
+              <span class="imgDescriptionText splatoon2Font"><span data-msgid="textbox_id-30079">Counter</span></span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex"><span data-msgid="textbox_id-30080">5</span></span>
+              <span class="imgDescriptionText splatoon2Font"><span data-msgid="textbox_id-30081">Barrier timer</span></span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex"><span data-msgid="textbox_id-30082">6</span></span>
+              <span class="imgDescriptionText splatoon2Font"><span data-msgid="textbox_id-30083">Team clam total</span></span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex"><span data-msgid="textbox_id-30084">7</span></span>
+              <span class="imgDescriptionText splatoon2Font"><span data-msgid="textbox_id-30085">Clams you're holding</span></span>
+            </div>
+            <div class="imgDescription">
+              <span class="imgDescriptionIndex"><span data-msgid="textbox_id-30094">8</span></span>
+              <span class="imgDescriptionText splatoon2Font"><span data-msgid="textbox_id-30095">Teammate holding the most clams</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader splatoon2Font">
+          <span data-msgcom="true" data-msgid="textbox_id-30033">Rules</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <div class="ruleContent">
+            <div class="screenshotWrapperPink rightSideImg">
+              <img src="../../img/EU/pic_vs_rule_01_asari.webp" class="screenshot" />
+            </div>
+            <div class="leftContent">
+              <span><span data-msgid="textbox_id-30086">Throw a Power Clam at the barrier protecting the enemy's basket to break it. The team that gets the most clams in the other team's basket wins!<br />Get started by collecting the clams scattered throughout the stage.<br />Just touch a clam and it will trail along behind you!</span></span>
+            </div>
+          </div>
+          <div class="ruleContent indentMedium">
+            <div class="screenshotWrapperGreen leftSideImg">
+              <img src="../../img/EU/pic_vs_rule_02_gachiasari.webp" class="screenshot" />
+            </div>
+            <div class="rightContent">
+              <span><span data-msgid="textbox_id-30087">Collect 10 clams and they'll combine to become a Power Clam!<br />Creating a Power Clam should be your first objective.</span></span>
+            </div>
+          </div>
+          <div class="ruleContent indentMedium">
+            <div class="screenshotWrapperPink rightSideImg">
+              <img src="../../img/EU/pic_vs_rule_03_break_barrier.webp" class="screenshot" />
+            </div>
+            <div class="leftContent">
+              <span><span data-msgid="textbox_id-30088">Once you've got a Power Clam, head for your opponent's basket and toss it at the protective barrier.<br />Press and release the A Button to throw the Power Clam or single clams. (You can also press the L Button.)<br />Once you've busted your opponent's barrier with a Power Clam, the barrier timer will start.</span></span>
+            </div>
+          </div>
+          <div class="ruleContent indentMedium">
+            <div class="screenshotWrapperGreen leftSideImg">
+              <img src="../../img/EU/pic_vs_rule_04_chance_time.webp" class="screenshot" />
+            </div>
+            <div class="rightContent">
+              <span><span data-msgid="textbox_id-30089">The barrier will stay open until the barrier timer shown in the middle of the screen runs out. Throw as many clams and Power Clams as you can into your opponent's basket before the timer runs out!<br />Press the A Button to throw clams into the enemy basket and increase your team's score. If your team manages to score 100 points, you'll win instantly via knockout!<br />Tossing clams into the enemy basket will extend the barrier timer.</span></span>
+            </div>
+          </div>
+          <div class="ruleContent indentMedium">
+            <div class="screenshotWrapperPink rightSideImg">
+              <img src="../../img/EU/pic_vs_rule_05_revival.webp" class="screenshot" />
+            </div>
+            <div class="leftContent">
+              <span><span data-msgid="textbox_id-30090">While your barrier is down, you won't be able to damage your opponent's barrier.<br />Start by splatting opponents who are carrying clams in order to stop them from extending the barrier timer.<br />If you can restore your barrier, a Power Clam will appear beneath your basket to help you launch a counterattack!</span></span>
+            </div>
+          </div>
+          <div class="ruleContent indentMedium">
+            <div class="screenshotWrapperGreen leftSideImg">
+              <img src="../../img/EU/pic_vs_rule_06_battle.webp" class="screenshot" />
+            </div>
+            <div class="rightContent">
+              <span><span data-msgid="textbox_id-30091">If you get splatted while carrying clams, you'll drop them on the turf right then and there.<br />Any clams dropped on the turf will disappear after enough time passes.<br />Pick up any clams or Power Clams your teammates drop before they vanish!</span></span>
+            </div>
+          </div>
+          <div class="ruleContent indentMedium">
+            <div class="screenshotWrapperPink rightSideImg">
+              <img src="../../img/EU/pic_vs_rule_07_map.webp" class="screenshot" />
+            </div>
+            <div class="leftContent">
+              <span><span data-msgid="textbox_id-30092">When you're having trouble finding enough clams to create a Power Clam, ink the turf around you.<br />If clams exist in areas covered by your team's ink, they'll be highlighted on the screen and will appear on the turf map.<br />After enough time passes, new clams will spawn throughout the stage, so try to ink as much turf as possible.</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bgPlate plateZigzag">
+        <h1 class="plateHeader">
+          <span data-msgcom="true" data-msgid="textbox_id-30035">Tips</span>
+        </h1>
+        <p class="tensen" />
+        <div class="bgPlateContent">
+          <div class="leftContent">
+            <span><span data-msgid="textbox_id-30093">Finding the best spots to lob clams at your opponent's basket in each stage is a winning strategy.<br />Launching a coordinated clam assault on the other team's basket can help secure victory in a hurry. When a teammate gets rid of the opponent's barrier, do everything you can to lob clams at their basket!<br />Any time a member of your team has a Power Clam, the special gauges of your entire team will slowly fill up. Also, if neither team has a Power Clam or both do, the special gauges of the team currently in the lead will gradually fill.</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- textbox_id_counter-30096 common_idbase-30000 --></body>
+</html>
